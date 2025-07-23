@@ -1,0 +1,125 @@
+<style>
+  #filters {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 12px;
+    transition: background-color 0.3s, transform 0.2s;
+    color: #333;
+    min-width: 80px;
+  }
+
+  .filter:hover {
+    background-color: #e8f0fe;
+    transform: scale(1.05);
+    color: #ff385c;
+  }
+
+  .filter i {
+    font-size: 20px;
+    margin-bottom: 6px;
+    color: #555;
+  }
+
+  .filter p {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .tax-info {
+    display: none;
+    color: #888;
+    font-size: 0.9rem;
+  }
+
+ .tax-toggle {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  margin-left: auto;
+  background-color: #fff;
+  border-radius: 50px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  font-size: 0.9rem;
+  gap: 10px;
+}
+
+  .listing-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .listing-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+</style>
+
+<!-- Filter Icons -->
+<div id="filters">
+  <div class="filter"><i class="fa-solid fa-fire fa-xl"></i><p>Trending</p></div>
+  <div class="filter"><i class="fa-solid fa-mountain-city fa-xl"></i><p>Iconic Cities</p></div>
+  <div class="filter"><i class="fa-solid fa-sun fa-xl"></i><p>Sun Point</p></div>
+  <div class="filter"><i class="fa-solid fa-umbrella-beach fa-xl"></i><p>Beach</p></div>
+  <div class="filter"><i class="fa-solid fa-monument fa-xl"></i><p>Monument</p></div>
+  <div class="filter"><i class="fa-solid fa-location-dot fa-xl"></i><p>Map</p></div>
+  <div class="filter"><i class="fa-solid fa-hotel fa-xl"></i><p>Hotels</p></div>
+  <div class="filter"><i class="fa-solid fa-person-swimming fa-xl"></i><p>Pool</p></div>
+  <div class="filter"><i class="fa-solid fa-tents fa-xl"></i><p>Camping</p></div>
+  <div class="filter"><i class="fa-solid fa-snowman fa-xl"></i><p>Arctic</p></div>
+
+  <!-- Tax Toggle -->
+  <div class="tax-toggle">
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+      <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
+    </div>
+  </div>
+</div>
+
+<!-- Listings -->
+<div class="container mt-5">
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 g-4">
+    <% for (let listing of allListing) { %>
+      <div class="col">
+        <a href="/listings/<%= listing._id %>" class="listing-link">
+          <div class="card listing-card h-100">
+            <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" style="height: 20rem; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="card-title"><%= listing.title %></h5>
+              <p class="card-text">
+                ₹<%= listing.price.toLocaleString("en-IN") %> / night
+                <span class="tax-info">&nbsp;&nbsp;+18% GST</span>
+              </p>
+              <p class="text-muted mb-0" style="font-size: 0.9rem;"><i class="fa-solid fa-location-dot"></i> <%= listing.location %></p>
+            </div>
+          </div>
+        </a>
+      </div>
+    <% } %>
+  </div>
+</div>
+
+<!-- Toggle GST Tax Visibility -->
+<script>
+  const taxSwitch = document.getElementById("flexSwitchCheckDefault");
+  taxSwitch.addEventListener("change", () => {
+    const taxInfoElems = document.querySelectorAll(".tax-info");
+    taxInfoElems.forEach(elem => {
+      elem.style.display = taxSwitch.checked ? "inline" : "none";
+    });
+  });
+</script>

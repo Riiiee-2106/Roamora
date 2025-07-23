@@ -1,0 +1,200 @@
+/* ========== Global Styles ========== */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  font-optical-sizing: auto !important;
+  font-weight: normal !important; /* Fixed: was 'weight' */
+  font-style: normal !important;
+}
+
+.container {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ========== Navbar ========== */
+.navbar {
+  height: 5rem;
+  background-color: #fff;
+}
+
+.fa-airbnb {
+  color: #da101b;
+  font-size: 3rem;
+}
+
+.no-underline {
+  text-decoration: none;
+  color: rgb(165, 14, 14);
+  font-size: 3rem;
+}
+
+.nav-link {
+  color: #090909 !important;
+}
+
+/* ========== Nav Links Section ========== */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  height: 4.5rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.nav-links li a:hover {
+  transform: scale(1.05);
+  color: #ff385c;
+}
+
+.nav-links li i {
+  margin-bottom: 6px;
+}
+
+/* ========== Auth Buttons ========== */
+.auth-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.auth-links a {
+  text-decoration: none;
+  color: #ff385c;
+  font-weight: bold;
+  padding: 6px 12px;
+  border: 1px solid #ff385c;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.auth-links a:hover {
+  background-color: #ff385c;
+  color: white;
+}
+
+/* ========== Footer ========== */
+.f-info {
+  text-align: center;
+  height: 8rem;
+  display: flex;
+  background-color: #e6e6ed;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: space-evenly;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.f-info-links a {
+  text-decoration: none;
+  color: #222222;
+}
+
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+
+.f-info-socials i {
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+/* ========== Cards ========== */
+.listing-card {
+  border: none !important;
+  margin-bottom: 2rem; /* Fixed typo: was 'margin: bottom' */
+}
+
+.card-img-top {
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.card-text {
+  font-weight: 400;
+}
+
+.listing-link {
+  text-decoration: none;
+}
+
+/* ========== Card Hover Effect ========== */
+.card-img-overlay {
+  opacity: 0;
+}
+
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: #fff;
+}
+
+/* ========== Buttons ========== */
+.add-btn,
+.edit-btn {
+  background-color: #fe424d !important;
+  border: none !important;
+}
+
+/* ========== Show Page ========== */
+.show-img {
+  height: 20vh;
+}
+
+.btns {
+  display: flex;
+}
+
+.show-card {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* ========== Listing Grid ========== */
+.heading {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #222;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* ========== Map ========== */
+#map {
+  height: 400px;
+  width: 60vh;
+}

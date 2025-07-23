@@ -1,0 +1,86 @@
+
+
+
+<div class="row mt-3">
+    <div class="col-8 offset-2">
+
+     <h3>Edit Listing</h3>
+    <form method="POST" action="/listings/<%= listing._id%>?_method=PUT" novalidate class="needs-validation"
+        enctype ="multipart/form-data">
+
+
+<div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input name="listing[title]"
+    value="<%= listing.title%>" placeholder="enter title" type="text" class="form-control" >
+
+    <div class="valid-feedback">Title looks good!</div>
+</div>
+
+
+
+<div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+<textarea name ="listing[description]" class="form-control"><%= listing.description%></textarea>
+
+  <div class="invalid-feedback">please enter a short description</div>
+</div>
+
+
+    <div class="mb-3" >
+        Original Listing Image
+        <br>
+    <img src="<%= originalImageUrl %>" class="img-fluid" >
+
+</div>
+
+    <div class="mb-3">
+    <label for="image" class="form-label">Upload New Image</label>
+<input name="listing[image]"  placeholder="enter image URL/Link" type="file" class="form-control" >
+
+
+
+
+<div class="row">
+
+<div class="mb-3 col-md-4">
+    <label for="price" class="form-label">Price</label>
+<input name="listing[price]" value="<%= listing.price%>" placeholder="enter price" type="number" class="form-control" >
+
+<div class="invalid-feedback">please enter valid price</div>
+</div>
+
+
+
+
+<div class="mb-3 col-md-8">
+    <label for="country" class="form-label">Country </label>
+<input name="listing[country]" 
+value="<%= listing.country%>" placeholder="enter country" type="text" class="form-control" >
+
+<div class="invalid-feedback">please enter valid country name</div>
+</div>
+
+</div>
+
+
+<div class="mb-3">
+    <label for="location" class="form-label">Location </label>
+    <input name="listing[location]" 
+value="<%= listing.location%>" placeholder="enter location" type="text" class="form-control" >
+
+    <div class="invalid-feedback">please enter a valid location</div>
+ </div>
+
+
+
+
+<br><br>
+<button class="btn btn-dark edit-btn mt-3">Edit listing</button>
+
+    </form>
+<br>
+</div>
+
+</div>
+
