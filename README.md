@@ -26,10 +26,6 @@ Roamora is a location-based listing platform that allows users to explore, revie
 
 ---
 
-## Getting Started
+###  Note
+This repository is for **viewing/demo purposes only**. Cloning, forking, or redistribution is **not permitted** without permission.
 
-```bash
-git clone https://github.com/Riiiee-2106/Roamora.git
-cd Roamora
-npm install
-npm start
