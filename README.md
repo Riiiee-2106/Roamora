@@ -26,6 +26,4 @@ Roamora is a location-based listing platform that allows users to explore, revie
 
 ---
 
-###  Note
-This repository is for **viewing/demo purposes only**. Cloning, forking, or redistribution is **not permitted** without permission.
 
