@@ -58,6 +58,8 @@ Database Options:
 
 MongoDB (NoSQL, flexible schema)
 Firebase / SQL (if applicable)
+
+
 Repository Structure
 Roamora/
 │── client/              # Frontend application
@@ -72,26 +74,33 @@ Roamora/
 │   ├── models/          # Database schemas
 │   ├── middleware/      # Custom middleware
 │   └── server.js        # Entry point
-│
-│── config/              # Configuration files
-│── package.json
-│── README.md
+
+
 System Design Principles
 Modularity – Independent and reusable components
 Scalability – Easy to extend with new features
 Performance – Optimized data flow and rendering
 Simplicity – Clean and intuitive structure
+
 Future Enhancements
+
 AI-based travel recommendations
 Smart itinerary optimization
 Real-time collaboration
 Mobile application support
 Advanced analytics
+
+
 Installation & Setup
+
+
+
+Summary
+
+Roamora is a modular, scalable, and performance-oriented travel system designed to streamline modern travel planning through clean architecture and efficient data handling
+
 git clone https://github.com/Riiiee-2106/Roamora.git
 cd Roamora
 npm install
 npm start
-Summary
-
-Roamora is a modular, scalable, and performance-oriented travel system designed to streamline modern travel planning through clean architecture and efficient data handling.
+│── README.md
